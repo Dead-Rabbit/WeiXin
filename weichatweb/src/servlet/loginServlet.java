@@ -32,7 +32,7 @@ public class loginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		final String backUrl = "http://www.jackswfit.cn/api/callBack";
+		final String backUrl = "http://www.jackswfit.cn/api/callBackServlet";
 		String url = "https://open.weixin.qq.com/connect/oauth2/authorize?"
 				+ "appid="+AuthUtil.APPID
 				+ "&redirect_uri="+ URLEncoder.encode(backUrl)

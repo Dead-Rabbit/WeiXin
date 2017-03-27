@@ -14,7 +14,7 @@ import weichatweb.cn.jackswfit.util.AuthUtil;
 /**
  * Servlet implementation class callBackServlet
  */
-@WebServlet("/callBack")
+@WebServlet("/callBackServlet")
 public class callBackServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -40,6 +40,7 @@ public class callBackServlet extends HttpServlet {
 		 JSONObject jsonObject = AuthUtil.doGetJson(url);
 		 String access_token = jsonObject.getString("access_token");
 		 String openid = jsonObject.getString("openid");
+		 
 		 String infoUrl = "https://api.weixin.qq.com/sns/userinfo?"
 		 		+ "access_token=" + access_token
 		 		+ "&openid=" + openid 
@@ -53,6 +54,7 @@ public class callBackServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		doGet(request,response);
 	}
 
 }
